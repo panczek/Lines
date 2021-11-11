@@ -11,26 +11,25 @@ namespace Code.Gameplay.LevelObjects
         {
             levelObjs = objs;
 
-            foreach (var levelObject in levelObjs)
+            foreach( var levelObject in levelObjs )
                 levelObject.LevelInit();
-            
         }
-        
+
         public void OnLevelStart()
         {
-            foreach (var levelObject in levelObjs)
+            foreach( var levelObject in levelObjs )
                 levelObject.LevelStarting();
         }
 
         public void OnLevelStop()
         {
-            foreach (var levelObject in levelObjs)
+            foreach( var levelObject in levelObjs )
                 levelObject.LevelStopping();
         }
 
         public void OnLevelUnload()
         {
-            foreach (var levelObject in levelObjs)
+            foreach( var levelObject in levelObjs )
                 levelObject.LevelUnloading();
         }
     }
