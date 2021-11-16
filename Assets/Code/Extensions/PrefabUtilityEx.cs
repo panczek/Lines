@@ -1,7 +1,7 @@
 ﻿#if UNITY_EDITOR
 
 using System.Collections.Generic;
-using UnityEditor.Experimental.SceneManagement;
+
 using UnityEngine;
 
 namespace UnityEditor
@@ -17,7 +17,7 @@ namespace UnityEditor
         /// <param name="gob"></param>
         /// <param name="stage"></param>
         /// <returns></returns>
-        public static bool IsOutermostPrefabInstanceRootIgnoringPrefabStageRootInVariants( GameObject gob, PrefabStage stage )
+        public static bool IsOutermostPrefabInstanceRootIgnoringPrefabStageRootInVariants( GameObject gob, UnityEditor.SceneManagement.PrefabStage stage )
         {
             if( stage == null || PrefabUtility.GetPrefabAssetType( AssetDatabase.LoadAssetAtPath<GameObject>( stage.assetPath ) ) != PrefabAssetType.Variant )
                 return PrefabUtility.IsOutermostPrefabInstanceRoot( gob );
@@ -28,7 +28,7 @@ namespace UnityEditor
         private static readonly List<Transform> assetChildren = new List<Transform>();
         private static readonly List<Transform> children = new List<Transform>();
 
-        public static GameObject FindObjectFromAssetInPrefabStage( GameObject gob, PrefabStage stage )
+        public static GameObject FindObjectFromAssetInPrefabStage( GameObject gob, UnityEditor.SceneManagement.PrefabStage stage )
         {
             if( !gob.IsPrefabAsset() )
             {

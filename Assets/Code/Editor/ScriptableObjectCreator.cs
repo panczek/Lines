@@ -12,14 +12,14 @@ public class ScriptableObjectCreator : OdinMenuEditorWindow
 {
     private static bool includeAll = false;
 
-    static HashSet<Type> scriptableObjectTypes => AssemblyUtilities.GetTypes( AssemblyTypeFlags.CustomTypes )
+    private static HashSet<Type> scriptableObjectTypes = new HashSet<Type>( AssemblyUtilities
+        .GetTypes( AssemblyTypeFlags.CustomTypes )
         .Where( t =>
             Filter( t ) &&
             t.IsClass &&
             typeof( ScriptableObject ).IsAssignableFrom( t ) &&
             !typeof( EditorWindow ).IsAssignableFrom( t ) &&
-            !typeof( Editor ).IsAssignableFrom( t ) )
-        .ToHashSet();
+            !typeof( Editor ).IsAssignableFrom( t ) ) );
 
     [MenuItem( "Assets/Create Scriptable Object", priority = -1000 )]
     private static void ShowDialog()

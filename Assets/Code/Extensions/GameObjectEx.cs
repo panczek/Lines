@@ -78,7 +78,7 @@ public static class GameObjectEx
             return true;
         }
 
-        return UnityEditor.Experimental.SceneManagement.PrefabStageUtility.GetPrefabStage( gob ) != null;
+        return UnityEditor.SceneManagement.PrefabStageUtility.GetPrefabStage( gob ) != null;
 #else
         return false;
 #endif
