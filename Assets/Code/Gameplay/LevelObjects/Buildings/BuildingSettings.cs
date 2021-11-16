@@ -1,11 +1,10 @@
 ﻿using Code.Gameplay.Factions;
-using UnityEditor;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace Code.Gameplay.LevelObjects.Buildings
 {
-    [CreateAssetMenu(fileName = "Building Settings", menuName = "ScriptableObjects/Buildings/Settings", order = 1)]
-    public class BuildingSettings : ScriptableObject
+    public class BuildingSettings : SerializedScriptableObject 
     {
         public Texture2D Icon;
         public EFaction Faction;
